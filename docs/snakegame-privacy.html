@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뱀 게임 개인정보처리방침</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf6ec;
+    --surface: #ffffff;
+    --surface-line: #e6c9a3;
+    --text: #3b2a1a;
+    --text-muted: #8a7460;
+    --accent: #f4a261;
+    --accent-dark: #c97a3a;
+    --accent-soft: #fff4dc;
+    --highlight: #7cc47c;
+    --highlight-soft: #eaf6ea;
+    --focus-ring: #f4a261;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #201a12;
+      --surface: #2a2118;
+      --surface-line: #4a3a26;
+      --text: #f3ead9;
+      --text-muted: #b9a68a;
+      --accent: #f6b378;
+      --accent-dark: #ffcfa0;
+      --accent-soft: #3a2c1a;
+      --highlight: #93d193;
+      --highlight-soft: #223522;
+      --focus-ring: #f6b378;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #201a12;
+    --surface: #2a2118;
+    --surface-line: #4a3a26;
+    --text: #f3ead9;
+    --text-muted: #b9a68a;
+    --accent: #f6b378;
+    --accent-dark: #ffcfa0;
+    --accent-soft: #3a2c1a;
+    --highlight: #93d193;
+    --highlight-soft: #223522;
+    --focus-ring: #f6b378;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.75;
+  }
+
+  a { color: var(--accent-dark); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.hero {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
+
+  .mark {
+    flex: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--accent);
+    display: grid;
+    place-items: center;
+  }
+  .mark svg { width: 30px; height: 30px; display: block; }
+
+  h1 {
+    font-family: "Noto Serif KR", serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2rem);
+    margin: 0;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+  }
+
+  .updated {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 18px 0 32px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--surface-line);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 0 0 40px;
+  }
+  .callout p {
+    margin: 0;
+    font-size: 1.02rem;
+  }
+  .callout strong { color: var(--accent-dark); }
+
+  .clause {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 4px 16px;
+    padding: 26px 0;
+    border-top: 1px solid var(--surface-line);
+  }
+  .clause:last-of-type { border-bottom: 1px solid var(--surface-line); }
+
+  .clause .num {
+    font-family: "Noto Serif KR", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent-dark);
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+
+  .clause h2 {
+    grid-column: 2;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+
+  .clause p {
+    grid-column: 2;
+    margin: 0;
+    color: var(--text-muted);
+  }
+  .clause p + p { margin-top: 10px; }
+
+  .clause .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--highlight);
+    background: var(--highlight-soft);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .contact {
+    margin-top: 40px;
+    background: var(--surface);
+    border: 1px solid var(--surface-line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact .label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+  }
+  .contact .value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .contact a {
+    text-decoration: none;
+    border: 1px solid var(--accent-dark);
+    color: var(--accent-dark);
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--surface-line);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .clause { grid-template-columns: 28px 1fr; gap: 2px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M6,18 C6,14 14,15 14,11 C14,7 6,8 6,4" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+        <circle cx="6" cy="4" r="2.4" fill="#3b2a1a"/>
+      </svg>
+    </div>
+    <div>
+      <p class="eyebrow">뱀 게임 &middot; com.sgshs.simplegame.snakegame</p>
+      <h1>개인정보처리방침</h1>
+    </div>
+  </header>
+
+  <p class="updated">시행일 2026년 9월 9일</p>
+
+  <div class="callout">
+    <p>
+      <strong>뱀 게임은 어떤 개인정보도 수집·전송·공유하지 않습니다.</strong>
+      점수를 포함한 모든 게임 데이터는 오직 사용자의 기기 안에만 저장되며,
+      개발자를 포함한 그 누구에게도 전송되지 않습니다.
+    </p>
+  </div>
+
+  <div class="clause">
+    <div class="num">01</div>
+    <h2>수집하는 개인정보</h2>
+    <p>없습니다. 이름, 이메일, 위치 정보, 광고 식별자 등 어떠한 개인정보도 수집하지 않습니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">02</div>
+    <h2>데이터 저장 방식</h2>
+    <p>
+      최고 점수는 기기 내부 브라우저 저장소(localStorage)에만 저장됩니다.
+      인터넷을 통해 어디로도 전송되지 않으며, 앱을 삭제하면 함께 삭제됩니다.
+    </p>
+    <span class="tag">기기 내부 저장만</span>
+  </div>
+
+  <div class="clause">
+    <div class="num">03</div>
+    <h2>네트워크 접근 및 권한</h2>
+    <p>
+      뱀 게임은 인터넷 접근 권한을 요청하지 않으며, 앱에 내장된 게임 화면만 오프라인으로 불러와 완전히 오프라인으로 동작합니다.
+      과일을 먹거나 게임이 끝날 때 짧은 진동을 위해 진동(VIBRATE) 권한만 요청하며, 이는 개인정보를 수집하지 않는 기기 제어 권한입니다.
+    </p>
+    <span class="tag">요청 권한: 진동뿐</span>
+  </div>
+
+  <div class="clause">
+    <div class="num">04</div>
+    <h2>제3자 제공</h2>
+    <p>수집하는 개인정보가 없으므로 제3자에게 제공하거나 공유하는 데이터도 없습니다. 광고 SDK, 분석 SDK를 포함하지 않습니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">05</div>
+    <h2>아동의 개인정보</h2>
+    <p>본 앱은 개인정보를 일절 수집하지 않으므로, 만 14세 미만 아동을 포함한 모든 사용자에게 동일하게 적용됩니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">06</div>
+    <h2>정책 변경</h2>
+    <p>본 개인정보처리방침이 변경되는 경우 이 페이지를 통해 공지합니다.</p>
+  </div>
+
+  <div class="contact">
+    <div>
+      <p class="label">문의</p>
+      <p class="value">genishs@gmail.com</p>
+    </div>
+    <a href="mailto:genishs@gmail.com">이메일 보내기</a>
+  </div>
+
+  <footer>
+    <span>뱀 게임 &middot; 개발자 genishs</span>
+    <span>최종 수정일 2026-09-08</span>
+  </footer>
+
+</div>
+</body>
+</html>
