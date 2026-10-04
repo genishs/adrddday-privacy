@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>심플 지하철 도착 개인정보처리방침</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf6ec;
+    --surface: #ffffff;
+    --surface-line: #e6c9a3;
+    --text: #3b2a1a;
+    --text-muted: #8a7460;
+    --accent: #f4a261;
+    --accent-dark: #c97a3a;
+    --accent-soft: #fff4dc;
+    --highlight: #7cc47c;
+    --highlight-soft: #eaf6ea;
+    --focus-ring: #f4a261;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #201a12;
+      --surface: #2a2118;
+      --surface-line: #4a3a26;
+      --text: #f3ead9;
+      --text-muted: #b9a68a;
+      --accent: #f6b378;
+      --accent-dark: #ffcfa0;
+      --accent-soft: #3a2c1a;
+      --highlight: #93d193;
+      --highlight-soft: #223522;
+      --focus-ring: #f6b378;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #201a12;
+    --surface: #2a2118;
+    --surface-line: #4a3a26;
+    --text: #f3ead9;
+    --text-muted: #b9a68a;
+    --accent: #f6b378;
+    --accent-dark: #ffcfa0;
+    --accent-soft: #3a2c1a;
+    --highlight: #93d193;
+    --highlight-soft: #223522;
+    --focus-ring: #f6b378;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.75;
+  }
+
+  a { color: var(--accent-dark); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.hero {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
+
+  .mark {
+    flex: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--accent);
+    display: grid;
+    place-items: center;
+  }
+  .mark svg { width: 30px; height: 30px; display: block; }
+
+  h1 {
+    font-family: "Noto Serif KR", serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2rem);
+    margin: 0;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+  }
+
+  .updated {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 18px 0 32px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--surface-line);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 0 0 40px;
+  }
+  .callout p {
+    margin: 0;
+    font-size: 1.02rem;
+  }
+  .callout strong { color: var(--accent-dark); }
+
+  .clause {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 4px 16px;
+    padding: 26px 0;
+    border-top: 1px solid var(--surface-line);
+  }
+  .clause:last-of-type { border-bottom: 1px solid var(--surface-line); }
+
+  .clause .num {
+    font-family: "Noto Serif KR", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent-dark);
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+
+  .clause h2 {
+    grid-column: 2;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+
+  .clause p {
+    grid-column: 2;
+    margin: 0;
+    color: var(--text-muted);
+  }
+  .clause p + p { margin-top: 10px; }
+
+  .clause .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--highlight);
+    background: var(--highlight-soft);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .contact {
+    margin-top: 40px;
+    background: var(--surface);
+    border: 1px solid var(--surface-line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact .label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+  }
+  .contact .value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .contact a {
+    text-decoration: none;
+    border: 1px solid var(--accent-dark);
+    color: var(--accent-dark);
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--surface-line);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .clause { grid-template-columns: 28px 1fr; gap: 2px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="5" y="3.5" width="14" height="13" rx="3.5" stroke="#ffffff" stroke-width="2.2"/>
+        <path d="M5 11h14" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="9" cy="14" r="1.1" fill="#3b2a1a"/><circle cx="15" cy="14" r="1.1" fill="#3b2a1a"/>
+        <path d="M8 20.5l1.5-4M16 20.5l-1.5-4" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <p class="eyebrow">심플 지하철 도착 &middot; com.sgshs.simple.subwayarrival</p>
+      <h1>개인정보처리방침</h1>
+    </div>
+  </header>
+
+  <p class="updated">시행일 2026년 10월 4일</p>
+
+  <div class="callout">
+    <p>
+      <strong>심플 지하철 도착은 개인정보를 수집하지 않으며, 개발자에게 어떤 데이터도 전송하지 않습니다.</strong>
+      도착 정보를 조회하기 위해 사용자가 입력한 역 이름만 서울특별시 공공 API로 전송되며,
+      이 전송은 암호화되지 않은 HTTP로 이루어집니다.
+    </p>
+  </div>
+
+  <div class="clause">
+    <div class="num">01</div>
+    <h2>수집하는 개인정보</h2>
+    <p>없습니다. 계정, 이름, 이메일, 연락처, 위치 정보, 광고 식별자 등 어떠한 개인정보도 수집하지 않습니다. 개발자는 서버를 운영하지 않으며, 개발자에게 전송되는 데이터는 없습니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">02</div>
+    <h2>외부로 전송되는 정보</h2>
+    <p>도착 정보를 보여주기 위해, 사용자가 입력한 <strong>역 이름</strong>을 서울 열린데이터광장의 「실시간 지하철 도착정보」 API(swopenapi.seoul.go.kr, 서울특별시 제공)로 전송하고 도착 정보를 받아옵니다. 역 이름 외의 정보는 전송하지 않습니다.</p>
+    <p>이 API는 https를 지원하지 않아, 역 이름이 <strong>암호화되지 않은 HTTP</strong>로 전송됩니다. 네트워크 경로상에서 해당 요청이 노출될 수 있으므로, 이 점을 알려드립니다.</p>
+    <span class="tag">전송 항목: 역 이름뿐</span>
+  </div>
+
+  <div class="clause">
+    <div class="num">03</div>
+    <h2>기기에 저장되는 정보</h2>
+    <p>마지막으로 고른 역·노선·방향, 그리고 떠 있는 창의 화면 위치가 기기 내부 저장소(SharedPreferences)에만 저장됩니다. 이 정보는 어디로도 전송되지 않으며, 자동 백업·기기 이전 대상에서 제외되고, 앱을 삭제하면 함께 삭제됩니다.</p>
+    <span class="tag">기기 내부 저장만</span>
+  </div>
+
+  <div class="clause">
+    <div class="num">04</div>
+    <h2>요청하는 권한과 용도</h2>
+    <p>인터넷: 도착 정보 조회에 사용합니다.</p>
+    <p>다른 앱 위에 표시: 도착 시간 창을 다른 앱 위에 띄우기 위해 사용하며, 사용자가 설정에서 직접 허용한 경우에만 동작합니다.</p>
+    <p>포그라운드 서비스: 창이 떠 있는 동안 약 30초마다 도착 정보를 갱신하며, 창을 닫으면 종료됩니다.</p>
+    <p>알림: 서비스 진행 알림과 「닫기」 버튼을 표시하는 데 사용합니다.</p>
+    <p>이 권한들로 개인정보를 수집하지 않습니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">05</div>
+    <h2>제3자 제공</h2>
+    <p>개인정보를 수집하지 않으므로 제3자에게 제공하거나 공유하는 개인정보는 없습니다. 광고 SDK, 분석 SDK를 포함하지 않으며, 광고와 결제도 없습니다.</p>
+    <p>서울특별시는 사용자가 요청한 도착 정보 조회를 처리하는 공공 데이터 제공처입니다. 해당 기관의 정보 처리에 관해서는 <a href="https://data.seoul.go.kr" target="_blank" rel="noopener">서울 열린데이터광장</a>의 정책을 따릅니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">06</div>
+    <h2>아동의 개인정보</h2>
+    <p>본 앱은 아동을 대상으로 하지 않으며, 개인정보를 수집하지 않으므로 만 14세 미만 아동을 포함한 모든 사용자에게 동일하게 적용됩니다.</p>
+  </div>
+
+  <div class="clause">
+    <div class="num">07</div>
+    <h2>정책 변경</h2>
+    <p>본 개인정보처리방침이 변경되는 경우 이 페이지를 통해 공지합니다.</p>
+  </div>
+
+  <div class="contact">
+    <div>
+      <p class="label">문의</p>
+      <p class="value">genishs@gmail.com</p>
+    </div>
+    <a href="mailto:genishs@gmail.com">이메일 보내기</a>
+  </div>
+
+  <footer>
+    <span>심플 지하철 도착 &middot; 개발자 genishs</span>
+    <span>최종 수정일 2026-10-04</span>
+  </footer>
+
+</div>
+</body>
+</html>
